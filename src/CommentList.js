@@ -3,8 +3,12 @@ class CommentList {
     this.comments = []
   }
 
+  renderComments(){
+    return this.comments.map(comment => comment.render() ).join('')
+  }
+
   render(){
-    return `<ul>${this.comments.map(comment => comment.render() ).join('')}</ul>`
+    return `<ul>${this.renderComments()}</ul>`
   }
 
   addComment(text){
