@@ -1,5 +1,3 @@
-$(renderCommentList)
-
-function renderCommentList (){
-  // your code here
-}
+$(document).ready(function(){
+  // your code here!
+})
