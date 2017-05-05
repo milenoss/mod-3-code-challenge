@@ -25,4 +25,4 @@ We're building out a commenting feature in our application with no persistence. 
 
 ## Part Two - The DOM
 
-6. Create a function in `index.js` called 'renderCommentList'. This function should add an event handler to the form so that when the form submits, we create a new comment and render it out in the comments list. The comments list should render inside of the div with an id of `comment-list`
+6. In index.js, add the needed code so that when we submit the form, a new comment text should appear in the div with the id of "comments". You may use the code that you wrote for part one but this is not a requirement. Get it to work. 
