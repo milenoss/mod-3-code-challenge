@@ -15,7 +15,7 @@ We're building out a commenting feature in our application with no persistence. 
 
 ## Deliverables
 
-## Part One - jQuery
+## Part One - Create a solution utilizing jQuery only.
 
 1. Create a working solution in `solution.js`
 
