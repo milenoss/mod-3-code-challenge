@@ -2,27 +2,33 @@
 
 ## Objectives
 
-+ Constructors / Prototypes or ES6 Classes
-+ Callbacks
-+ DOM Manipulation
-+ Events and Event Handlers
+- Constructors / Prototypes or ES6 Classes
+- Callbacks
+- DOM Manipulation
+- Events and Event Handlers
 
 ## Instructions
 
-We're building out a commenting feature in our application with no persistence. A user should be able to create a new comment and have that comment be added into a comment list.
+We're building out a commenting feature in our application with no persistence. A user should be able to create a new comment and have that comment be added into a comment list. The comment list can be filtered via keyword.
 
 **Note** When creating constructors and prototypes, you may use ES6 classes or just create the constructor function separately. Your choice.
 
 ## Deliverables
 
-## Part One - Constructors and Prototypes
+## Part One - jQuery
 
-1. create a constructor for a `Comment`. New comments should initialize with some text.
-2. instances of comments should have a prototype method called 'render' that returns a string of an `li` with that comment's text inside.
-3. create a constructor for a `CommentList`. New comment lists should initialize with an array of comments (this will be empty to start).
-4. instances of CommentList should have a method called 'render' that returns a string of a `ul`. Inside of the ul, the comment list should include the return value of the render method of all of it's comments.
-5. instances of CommentList should have a method called 'addComment' that takes in a string. It should instantiate a new Comment and add it to the CommentList's array of comments.
+1. Create a working solution in `solution.js`
 
-## Part Two - The DOM
+  - The input field for comments/filter has been provided for you.
+  - When submit button is clicked, comments should be added to a comment list. A new comment's text should appear in the ul with the id of "comments-list"
+  - In a second input field, a user should be able to type a keyword and filter the same comments list based on that provided keyword.
 
-6. In index.js, add the needed code so that when we submit the form, a new comment text should appear in the div with the id of "comments". You may use the code that you wrote for part one but this is not a requirement. Get it to work. 
+    - _filtering comments_: if a comment does not contain the search term it should **NOT** be visible in the comment list
+
+## Part Two - Refactoring with Constructors and Prototypes (feel free to use either ES5 or ES6)
+
+1. Create a JS class / constructor for a `Comment`. New comments should initialize with some text.
+2. Instances of comments should have a prototype method called 'render' that returns a string of an `li` with that comment's text inside.
+3. Create a class / constructor for a `CommentList`. New comment lists should initialize with an array of comments (this will be empty to start).
+4. Instances of CommentList should have a method called 'render' that returns a string of a `ul`. Inside of the ul, the comment list should include the return value of the render method of all of it's comments.
+5. Instances of CommentList should have a method called 'addComment' that takes in a string. It should instantiate a new Comment and add it to the CommentList's array of comments.
