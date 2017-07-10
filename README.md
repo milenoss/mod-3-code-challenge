@@ -27,7 +27,7 @@ We're building out a commenting feature in our application with no persistence. 
 
 ## Part Two - Refactoring with Constructors and Prototypes (feel free to use either ES5 or ES6)
 
-1. Create a new file called `refactored_solution.js`
+1. Create new files `comment.js` anad `commentList.js`
 2. Create a JS class / constructor for a `Comment`. New comments should initialize with some text.
 3. Instances of comments should have a prototype method called 'render' that returns a string of an `li` with that comment's text inside.
 4. Create a class / constructor for a `CommentList`. New comment lists should have a comments array. The initializer should be able to take an array of strings and convert them to comments 
