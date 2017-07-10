@@ -27,8 +27,9 @@ We're building out a commenting feature in our application with no persistence. 
 
 ## Part Two - Refactoring with Constructors and Prototypes (feel free to use either ES5 or ES6)
 
-1. Create a JS class / constructor for a `Comment`. New comments should initialize with some text.
-2. Instances of comments should have a prototype method called 'render' that returns a string of an `li` with that comment's text inside.
-3. Create a class / constructor for a `CommentList`. New comment lists should initialize with an array of comments (this will be empty to start).
-4. Instances of CommentList should have a method called 'render' that returns a string of a `ul`. Inside of the ul, the comment list should include the return value of the render method of all of it's comments.
-5. Instances of CommentList should have a method called 'addComment' that takes in a string. It should instantiate a new Comment and add it to the CommentList's array of comments.
+1. Create a new file called `refactored_solution.js`
+2. Create a JS class / constructor for a `Comment`. New comments should initialize with some text.
+3. Instances of comments should have a prototype method called 'render' that returns a string of an `li` with that comment's text inside.
+4. Create a class / constructor for a `CommentList`. New comment lists should have a comments array. The initializer should be able to take an array of strings and convert them to comments 
+5. Instances of CommentList should have a method called 'render' that returns a string of a `ul`. Inside of the ul, the comment list should include the return value of the render method of all of it's comments.
+6. Instances of CommentList should have a method called 'addComment' that takes in a string. It should instantiate a new Comment and add it to the CommentList's array of comments.
