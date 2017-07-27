@@ -16,21 +16,26 @@ We're building out a commenting feature in our application (no backend persisten
 ## Deliverables
 
 ### Functionality demo
+
 ![Functionality Demo](functionality-demo.gif)
 
+### Part One - Create a solution without utilizing Object Orientation(no classes) ****NO jQuery****.
 
-### Part One - Create a solution without utilizing Object Orientation(no classes) **__NO jQuery__**.
+1. **Create a working solution in `vanillaJS.js`**
 
-1. **Create a working solution in `solution.js`**
-    - The input field for comments/filter has been provided for you.
+  - The input field for comments/filter has been provided for you.
+
 2. When a users clicks the 'Create comment' button, comments should be added to a comment list. The new comment should appear as an `<li>new comment text here</li>` element wrapped in an unordered list.
-    - Each comment should have a delete button/link.
+
+  - Each comment should have a delete button/link.
+
 3. If a users provides a search term into the 'Filter comments' input field the comments list should automatically display only comments containing the filtering term. (Hint: You could use a "keyup" event bound to the comments filtering input field).
-    - If the users clears the filtering input all comments should be displayed again.
+
+  - If the users clears the filtering input all comments should be displayed again.
 
 ### Part Two - Refactoring with Constructors and Prototypes (feel free to use either ES5 or ES6)
 
-1. Create your refactored OO Solution in a new file.(`index.js`)
+1. **Create your refactored OO Solution in a new file.(`index.js`)**
 2. Create new files `comment.js` anad `commentList.js`
 3. The commment class should support the following api: `new Comment('Comment text')`
 4. Instances of comments should have a method called 'render' that returns a string reppresenting an `li` HTML element containing the comment's text.
@@ -38,4 +43,4 @@ We're building out a commenting feature in our application (no backend persisten
 6. Instances of CommentList should have a method called 'render' that returns a string of a `ul`. Inside of the ul, the comment list should include the return value of the render method of all of it's comments.
 7. Instances of CommentList should have a method called 'addComment' that takes in a string. It should instantiate a new Comment and add it to the CommentList's array of comments.
 8. Implement a filter functionality for your comment list.
-9. Implement a delete functionaility on each comment. 
+9. Implement a delete functionaility on each comment.
