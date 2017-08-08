@@ -9,7 +9,7 @@
 
 ## Instructions
 
-We're building out a commenting feature in our application (no backend persistence). A user should be able to create a new comment and have that comment be added into a comments list. The comments list can be filtered via keyword.
+We're building out a commenting feature in our application (no backend persistence). A user should be able to create a new comment and have that comment be added to a comments list. The comments list can be filtered via keyword.
 
 **Note** When creating constructors and prototypes, you may use ES6 classes or just create the constructor function separately. Your choice.
 
@@ -23,15 +23,15 @@ We're building out a commenting feature in our application (no backend persisten
 
 1. **Create a working solution in `vanillaJS.js`**
 
-  - The input field for comments/filter has been provided for you.
+  - The input field for comments/filter has been provided to you.
 
 2. When a users clicks the 'Create comment' button, comments should be added to a comment list. The new comment should appear as an `<li>new comment text here</li>` element wrapped in an unordered list.
 
   - Each comment should have a delete button/link.
 
-3. If a users provides a search term into the 'Filter comments' input field the comments list should automatically display only comments containing the filtering term. (Hint: You could use a "keyup" event bound to the comments filtering input field).
+3. If a user provides a search term into the 'Filter comments' input field the comments list should automatically display only comments containing the filtering term. (Hint: You could use a "keyup" event bound to the comments filtering input field).
 
-  - If the users clears the filtering input all comments should be displayed again.
+  - If the user clears the filtering input all comments should be displayed again.
 
 ### Part Two - Refactoring with Constructors and Prototypes (feel free to use either ES5 or ES6)
 
