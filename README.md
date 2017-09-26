@@ -5,43 +5,78 @@
 - DOM Manipulation
 - Events and Event Handlers
 - Callbacks
-- Constructors and Prototypes or ES6 Classes (For part two)
+- ES6 Classes
+- Fetching from APIs
 
 ## Instructions
 
-We're building out a commenting feature in our application (no backend persistence). A user should be able to create a new comment and add that comment to a 'comments list.' The comments list can be filtered via keyword.
+Today we're building RandoPic, an app for viewing a random picture.
+
+A RandoPic user will be able to do four things:
+  - 'like' a picture
+  - see a picture's displayed likes
+  - comment on each picture
+  - and read comments about each picture
+
+## Using the API
+  You'll be give an random number to use with this API. The number represents the id of the picture you'll want to access from the API. **Before you start this project, replace the "1" with your unique id number in index.js.** This will be the image id you'll be working with for this code challenge.
+
+  - To get the picture info about a single picture make a **get** request to this endpoint:
+  ```
+  http://CHANGE THIS/images/:picture_id
+  ```
+  The response for this request should include a picture url, number of likes, and a picture's comments.
+
+  - To add a 'like' to a picture, make a **post** request to this endpoint:
+  ```
+  http://CHANGE THIS/likes/:picture_id
+  ```
+  This request will respond the the updated image data.
+
+  - To add a comment to a picture, make a **post** request to this endpoint:
+  ```
+  http://CHANGE THIS/comments/:picture_id
+  ```
+  This request will respond with the updated image data.
+
+  - To delete a comment, make a **delete** request to this endpoint:
+  ```
+  http://CHANGE THIS/comments/:picture_id
+  ```
+  This request will respond with the updated image data.
+
+### Functionality demo
+ADD HERE
+
+## Getting Started
+1. Check out examplePage.html to see an example of the HTML you'll want to generate for a photo. NOTE that examplePage.html is a static html page; you'll be dynamically rendering html for an image using JavaScript.
+
+2. Look at the code provided for you in the 'src' folder.
+
+3. **Prioritize making code that works over attempting all of the deliverable.** Make each part work before moving on to the next step.
 
 ## Deliverables
 
-### Functionality demo
+1. Open index.js and find the "DOMContentLoaded" event listener. This event listener should make a fetch request to get a picture and parse .json() from the response. (Try logging the results to make sure your request works!)
 
-![Functionality Demo](functionality-demo.gif)
+2. Now, you'll need to use the results and generate HTML to append to the DOM. Start by simply rendering each picture. (Remember that you have an Image class in Image.js) Next, build upon your render function to add the following HTML along with each picture:
+  - the number of likes for a picture
+  - a button to 'like' a picture
+  - a form to add a comment
+  - all of the picture's comments in an unordered list (Remember that you have a Comment class in Comment.js)
 
-### Part One - Create a solution without utilizing Object Orientation(no classes) ****NO jQuery****.
+Use the data available to you to render the picture's comments and number of likes.   
 
-1. **Create a working solution in `vanillaJS.js`**
-  **DO NOT SKIP PART ONE LEAVE THE SOLUTION FOR PART ONE IN ITS OWN FILE**
+3. Now, build out the 'like' button functionality.
 
-  - The input field for comments/filter has been provided to you.
+First, make a button that, on click, increases the number of likes rendered to the user on the font-end.
 
-2. When a users clicks the 'Create comment' button, comments should be added to a comment list. The new comment should appear as an `<li>new comment text here</li>` element wrapped in an unordered list.
+Next, the app should persist the 'like' to the database by making a post request to the API with the picture's id. Don't worry about sending along any other info with this post request. The API will handle the logic of incrementing the picture's likes.
 
-  - Each comment should have a delete button/link.
+4. Next, create the ability to add a comment.
 
-3. If a user provides a search term into the 'Filter comments' input field, the comments list should automatically display only comments containing the filtering term. (Hint: You could use a "keyup" event bound to the comments filtering input field).
+First, append the comment as a new list item in the comment list when a user submits the comment form.
 
-  - If the user clears the filtering input all comments should be displayed again.
+Once that part is working, persist the data by making a post request to the database with the comment's text and the picture's id.
 
-### Part Two - Refactoring with Constructors and Prototypes (feel free to use either ES5 or ES6)
-
-**Note** When creating constructors and prototypes, you may use ES6 classes or just create the constructor function separately. Your choice.
-
-1. **Create your refactored OO Solution in a new file.(`index.js`)**
-2. Code your solution in `comment.js` and `commentList.js`
-3. The commment class should support the following api: `new Comment('Comment text')`
-4. Instances of comments should have a method called 'render' that returns a string representing an `li` HTML element containing the comment's text.
-5. The comment lists class `commentList.js` should have a comments array. The initializer should be able to take an array of strings and convert them to comments
-6. Instances of CommentList should have a method called 'render' that returns a string of a `ul`. Inside of the ul, the comment list should include the return value of the render method of all of it's comments.
-7. Instances of CommentList should have a method called 'addComment' that takes in a string. It should instantiate a new Comment and add it to the CommentList's array of comments.
-8. Implement a filter functionality for your comment list.
-9. Implement a delete functionality on each comment.
+5. Lastly, create the ability to delete a comment. Think about when you'll want to add the event listener to the delete button, and how you'll get the comment's id to post to the API.
