@@ -12,38 +12,41 @@
 
 Today we're building RandoPic, an app for viewing a random picture.
 
-A RandoPic user will be able to do four things:
+A RandoPic user will be able to do five things:
   - 'like' a picture
   - see a picture's displayed likes
   - comment on each picture
-  - and read comments about each picture
+  - read comments about each picture
+  - delete comments
 
 ## Using the API
   You'll be give an random number to use with this API. The number represents the id of the picture you'll want to access from the API. **Before you start this project, replace the "1" with your unique id number in index.js.** This will be the image id you'll be working with for this code challenge.
+  
+  The following endpoints should be used as you build out your frontend.  Each endpoint's response is the same - whether you are getting, posting, or deleting something, you will receive response that includes the picture url, image name, number of likes, and all related comments, and will reflect any changes you have made as long as the fetch request is correct.
 
   - To get the picture info about a single picture make a **get** request to this endpoint:
   ```
-  http://CHANGE THIS/images/:picture_id
+  https://randopic.herokuapp.com/images/:picture_id
   ```
-  The response for this request should include a picture url, number of likes, and a picture's comments.
+  The response for this request will include everything you need to render out your page.
 
   - To add a 'like' to a picture, make a **post** request to this endpoint:
   ```
-  http://CHANGE THIS/likes/:picture_id
+  https://randopic.herokuapp.com/likes/:picture_id
   ```
-  This request will respond the the updated image data.
+  This request will increment likes by one for the specific picture.
 
   - To add a comment to a picture, make a **post** request to this endpoint:
   ```
-  http://CHANGE THIS/comments/:picture_id
+  https://randopic.herokuapp.com/comments/:picture_id
   ```
-  This request will respond with the updated image data.
+  This request will create a comment and associate it with the picture on the backend.
 
   - To delete a comment, make a **delete** request to this endpoint:
   ```
-  http://CHANGE THIS/comments/:picture_id
+  https://randopic.herokuapp.com/comments/:picture_id
   ```
-  This request will respond with the updated image data.
+  This request will delete the specific comment and it's association with the picture.
 
 ### Functionality demo
 ADD HERE
@@ -57,10 +60,12 @@ ADD HERE
 
 ## Deliverables
 
-1. Open index.js and find the "DOMContentLoaded" event listener. This event listener should make a fetch request to get a picture and parse .json() from the response. (Try logging the results to make sure your request works!)
+1. Open index.js and find the "DOMContentLoaded" event listener. This event listener should make an initial fetch request to get a picture and parse .json() from the response. (Try logging the results to make sure your request works!)
 
 2. Now, you'll need to use the results and generate HTML to append to the DOM. Start by simply rendering each picture. (Remember that you have an Image class in Image.js) Next, build upon your render function to add the following HTML along with each picture:
+  - the name of the picture
   - the number of likes for a picture
+  - the id of the picture
   - a button to 'like' a picture
   - a form to add a comment
   - all of the picture's comments in an unordered list (Remember that you have a Comment class in Comment.js)
