@@ -53,7 +53,7 @@ ADD HERE
 
 2. Look at the code provided for you in the 'src' folder.
 
-3. **Prioritize making code that works over attempting all of the deliverable.** Make each part work before moving on to the next step.
+3. **Prioritize making code that works over attempting all of the deliverables.** Make each part work before moving on to the next step.
 
 ## Deliverables
 
