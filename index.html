@@ -4,11 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>JavaScript Code Challenge</title>
-  <!-- jQuery library to support Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <style>
     input {
@@ -19,13 +16,31 @@
 
 <body>
   <div class="container">
-    <ul id="image-list">
+    <div class="row" id="image_content">
+      <div class="card col-md-4"></div>
+      <div id="image_card" class="card col-md-4">
+          <img id="image" src="http://blog.flatironschool.com/wp-content/uploads/2017/06/IMAG2936-352x200.jpg" />
+          <h4 id="name">Default Flatiron Image</h4>
+          <span>Likes:
+            <span id="likes">5</span>
+          </span>
+          <button id="like_button">Like</button>
+          <span>Image ID:
+            <span id="image_id">1</span>
+          </span>
+          <form id="comment_form">
+            <input id="comment_input" type="text" name="comment" placeholder="Add Comment"/>
+            <input type="submit" value="Submit"/>
+          </form>
+          <ul id="comments">
 
-    </ul>
-
-    <!-- <script type="text/javascript" src='src/vanillaJS.js'></script>
-    <script type="text/javascript" src='src/CommentList.js'></script>
-    <script type="text/javascript" src='src/Comment.js'></script> -->
-    <script type="text/javascript" src='src/index.js'></script>
+          </ul>
+      </div>
+      <div class="card col-md-4"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src='src/Image.js'></script>
+  <script type="text/javascript" src='src/Comment.js'></script>
+  <script type="text/javascript" src='src/index.js'></script>
   </body>
 </html>
