@@ -70,7 +70,7 @@ A user can like the same picture multiple times.
 
 ## Step 3 - Like Feature (Backend)
 
-For this app we will use what is called optimistic rendering. When a user clicks the 'Like' button we will immediately update the DOM.  Next our app will make a POST request to persist the new like in the backend database
+This app we will use what is called *optimistic rendering*. This means we will update the DOM before the changes are added to the database.  When a user clicks the 'Like' button we will immediately update the DOM.  Next your job is to make a POST request to persist the new Like in the backend database
 
 #### API Docs
 #### Endpoint to create a Like
@@ -104,7 +104,7 @@ The next feature to approach is the functionality to add comments to a picture. 
 
 Filling out the input and clicking 'Submit' should append your new comment as an `<li>` to the comments unordered list element. You should also clear out the comment input, so it's an empty field for the next comment to be added.
 
-## Step 6 - Comment Feature (Backend)
+## Step 5 - Comment Feature (Backend)
 
 As before, after optimistically rendering a comment we need to persist the comment to the database.
 
@@ -137,7 +137,7 @@ To test your code you should be able to refresh the page and see any comments yo
 
 ## BONUS - NOT REQUIRED
 
-## Step 7 - Delete a comment feature
+## Step 6 - Delete a comment feature
 
 This feature is not required and you should only attempt if you have time.
 
