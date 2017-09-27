@@ -13,7 +13,8 @@
 Today we're building RandoPic, an app for viewing a random picture.
 
 A RandoPic user will be able to do five things:
-  - 'like' a picture
+  //user stories
+  - As a user, ... 'like' a picture
   - see a picture's total likes
   - comment on each picture
   - read comments about each picture

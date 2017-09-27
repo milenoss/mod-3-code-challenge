@@ -1,6 +1,6 @@
 class Image {
-
-  // render(json) {
+  // add constructor
+  // render() {
   //   document.getElementById('image').src = json.url
   //   document.getElementById('image').alt = json.name
   //   document.getElementById('name').innerText = json.name
