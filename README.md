@@ -44,7 +44,18 @@ GET 'https://randopic.herokuapp.com/images/:image_id'
 
 Example Response:
 {
-  TODO: 'fill this out'
+  "id": 1,
+  "url": "http://blog.flatironschool.com/wp-content/uploads/2017/06/IMAG2936-352x200.jpg",
+  "name": "Science Fair",
+  "likes": 0,
+  "comments": [
+    {
+      "id": 1,
+      "content": "first comment!",
+      "created_at": "2017-09-27T18:18:05.623Z",
+      "updated_at": "2017-09-27T18:18:05.623Z"
+    }
+  ]
 }
 ```
 **Before you start this project, replace the "1" with your unique id number in index.js.** This will be the image id you'll be working with for this code challenge.
