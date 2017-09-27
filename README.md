@@ -14,9 +14,9 @@ Today we're building RandoPic, an app for viewing a random picture. There is a b
 
 A RandoPic user will be able to do the following things:
 
-  - As a user, when the page loads I will see an image, any comments that image has and the number of likes that image has
+  - As a user, when the page loads I will see an image, any comments that image has, and the number of likes that image has.
 
-  - As a user, I can click to like an image, which will increase the number of likes that image has by one
+  - As a user, I can click to like an image, which will increase the number of likes that image has by one.
 
   - As a user I can fill out an input fields and submit the form to add a comment to an image. I should see my new comment below any previous comments.
 
@@ -70,7 +70,7 @@ A user can like the same picture multiple times.
 
 ## Step 3 - Like Feature (Backend)
 
-This app we will use what is called *optimistic rendering*. This means we will update the DOM before the changes are added to the database.  When a user clicks the 'Like' button we will immediately update the DOM.  Next your job is to make a POST request to persist the new Like in the backend database
+This app will use what is called *optimistic rendering*. This means the DOM will be updated before the changes are added to the database.  When a user clicks the 'Like' button we will immediately update the DOM.  Next your job is to make a POST request to persist the new Like in the backend database.
 
 #### API Docs
 #### Endpoint to create a Like
