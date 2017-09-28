@@ -1,34 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <title>Example Page</title>
+  <meta charset="utf-8">
+  <title>JavaScript Code Challenge</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <style>
+    input {
+      font-size: 2rem;
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
-    <div class="row">
+    <div class="row" id="image_content">
       <div class="card col-md-4"></div>
-      <div class="card col-md-4">
-          <img src="http://blog.flatironschool.com/wp-content/uploads/2017/05/science-fair-background-352x200-1494513180.jpg" alt="default flatiron" />
-          <h4>Default Flatiron Image 2</h4>
-          <h5>Likes: 2 <button>Like</button></h5>
-          //include image id as example include data data-attribute
-          <form>
-            <input type="text" placeholder="Add Comment"/>
+      <div id="image_card" class="card col-md-4">
+          <img src="http://blog.flatironschool.com/wp-content/uploads/2017/05/science-fair-background-352x200-1494513180.jpg" id="image" data-id/>
+          <h4 id="name"></h4>
+          <span>Likes:
+            <span id="likes">5</span>
+          </span>
+          <button id="like_button">Like</button>
+          <form id="comment_form">
+            <input id="comment_input" type="text" name="comment" placeholder="Add Comment"/>
             <input type="submit" value="Submit"/>
           </form>
-          <ul class="comments">
-            <li>Hey it's the Science Fair! <button>delete</button></li>
-            <li>Module 5 FTW <button>delete</button></li>
+          <ul id="comments">
+            <li>first comment!</li>
           </ul>
       </div>
       <div class="card col-md-4"></div>
     </div>
   </div>
-</body>
+  <script type="text/javascript" src='src/Image.js'></script>
+  <script type="text/javascript" src='src/Comment.js'></script>
+  <script type="text/javascript" src='src/index.js'></script>
+  </body>
 </html>
