@@ -47,7 +47,7 @@ Example Response:
   "id": 1,
   "url": "http://blog.flatironschool.com/wp-content/uploads/2017/06/IMAG2936-352x200.jpg",
   "name": "Science Fair",
-  "likes": 0,
+  "like_count": 0,
   "comments": [
     {
       "id": 1,
@@ -101,7 +101,7 @@ Required Headers
 
 Example Response:
 {
-  TODO: 'fill this out'
+  like_count: 5
 }
 ```
 
@@ -138,7 +138,20 @@ Required Headers
 
 Example Response:
 {
-  TODO: 'fill this out'
+  [
+    {
+      "id": 2,
+      "content": "first comment!",
+      "created_at": "2017-09-27T18:18:05.623Z",
+      "updated_at": "2017-09-27T18:18:05.623Z"
+    },
+    {
+      "id": 52,
+      "content": "second comment!",
+      "created_at": "2017-09-27T18:25:05.623Z",
+      "updated_at": "2017-09-27T18:25:05.623Z"
+    }
+  ]
 }
 ```
 
@@ -161,12 +174,19 @@ Take the same iterative approach as before.
 #### API Docs
 #### Endpoint to delete a Comment
 ```
-DELETE 'https://randopic.herokuapp.com/comments/:ccomment_id'
+DELETE 'https://randopic.herokuapp.com/comments/:comment_id'
 
 
 Example Response:
 {
-  TODO: 'fill this out'
+  [
+    {
+      "id": 52,
+      "content": "second comment!",
+      "created_at": "2017-09-27T18:25:05.623Z",
+      "updated_at": "2017-09-27T18:25:05.623Z"
+    }
+  ]
 }
 ```
 
