@@ -58,7 +58,7 @@ Example Response:
   ]
 }
 ```
-**Before you start this project, replace the "1" with your unique id number in index.js.** This will be the image id you'll be working with for this code challenge.
+**Before you start anything else, locate the variable `imageId` in the `src/index.js`. Replace the value of the variable with your assigned number.** This will be the image id you'll be working with for this code challenge.
 
 Use the data from the API response to append the information to the DOM. You will need to add:
 
