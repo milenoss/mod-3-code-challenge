@@ -127,7 +127,7 @@ POST 'https://randopic.herokuapp.com/comments'
 Required keys in the body of the request:
 {
   image_id: <insert image id here>,
-  content: <insert comment content here>
+  comment: <insert comment content here>
 }
 
 Required Headers
