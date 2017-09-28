@@ -35,7 +35,7 @@ We have provided what we believe to be a good breakdown of how to approach the t
 
 ## Step 1 - Get the Image Data
 
-When your the page loads you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions.
+When the page loads you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions.
 
 #### API Docs
 #### Endpoint to show an individual Image
