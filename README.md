@@ -95,7 +95,7 @@ Required keys in the body of the request:
 
 Required Headers
 {
-  'Accept': 'application/json'
+  'Accept': 'application/json',
   'Content-Type': 'application/json'
 }
 
@@ -127,12 +127,12 @@ POST 'https://randopic.herokuapp.com/comments'
 Required keys in the body of the request:
 {
   image_id: <insert image id here>,
-  comment: <insert comment content here>
+  content: <insert comment content here>
 }
 
 Required Headers
 {
-  'Accept': 'application/json'
+  'Accept': 'application/json',
   'Content-Type': 'application/json'
 }
 
