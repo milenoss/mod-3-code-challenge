@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const image_id = 50 //ENTER YOUR NUMBER HERE
-  const imageURL = `https://randopic.herokuapp.com/images/${image_id}`
+  const imageId = 1 //Enter your assigned imageId here
+  const imageURL = `https://randopic.herokuapp.com/images/${imageId}`
   const likeURL = `https://randopic.herokuapp.com/likes/`
   const commentsURL = `https://randopic.herokuapp.com/comments/`
 
