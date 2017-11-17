@@ -101,7 +101,10 @@ Required Headers
 
 Example Response:
 {
-  like_count: 5
+    "id": 112,
+    "image_id": 8,
+    "created_at": "2017-11-17T13:52:22.167Z",
+    "updated_at": "2017-11-17T13:52:22.167Z"
 }
 ```
 
