@@ -40,7 +40,7 @@ When the page loads you will need to make a request to the API to get the data a
 #### API Docs
 #### Endpoint to show an individual Image
 ```
-GET 'https://randopic.herokuapp.com/images/:image_id'
+GET 'https://randopic-challenge.herokuapp.com/images/:image_id'
 
 Example Response:
 {
@@ -86,7 +86,7 @@ This app will use what is called *optimistic rendering*. This means the DOM will
 #### API Docs
 #### Endpoint to create a Like
 ```
-POST 'https://randopic.herokuapp.com/likes'
+POST 'https://randopic-challenge.herokuapp.com/likes'
 
 Required keys in the body of the request:
 {
@@ -125,7 +125,7 @@ As before, after optimistically rendering a comment we need to persist the comme
 #### API Docs
 #### Endpoint to create a Comment
 ```
-POST 'https://randopic.herokuapp.com/comments'
+POST 'https://randopic-challenge.herokuapp.com/comments'
 
 Required keys in the body of the request:
 {
@@ -169,7 +169,7 @@ Take the same iterative approach as before.
 #### API Docs
 #### Endpoint to delete a Comment
 ```
-DELETE 'https://randopic.herokuapp.com/comments/:comment_id'
+DELETE 'https://randopic-challenge.herokuapp.com/comments/:comment_id'
 
 Example Response:
 {
