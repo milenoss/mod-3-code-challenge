@@ -23,7 +23,7 @@ A RandoPic user will be able to do the following things:
   - As a user, when I refresh the page, any comments or likes I have added should be persisted to the backend API and I should see my changes on the page.
 
 ## Functionality demo
-  [Example](./animated_challenge_example.gif "Example Functionality")
+  ![Example](./animated_challenge_example.gif "Example Functionality")
 
 We have also provided an `examplePage.html` file to see an example of the HTML you'll want to generate for a photo. NOTE that examplePage.html is a static html page; you'll be dynamically manipulating the `index.html` file using JavaScript.
 
