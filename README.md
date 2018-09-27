@@ -94,7 +94,7 @@ This app will use what is called _optimistic rendering_. This means the DOM will
 
 #### Endpoint to create a Like
 
-Remember the **UUID** that we used to fetch our image initially? Don't worry about that here. In the request's body key, set 'image_id' to the 'id' from the image response object to tell your POST where to go.
+Remember the **UUID** that we used to fetch our image initially? Don't worry about that here. In the request's body key, set 'image_id' to the 'id' from the image response object from step 1 (which should be a number - not a big jumbled string!) to tell your POST where to go.
 
 ```
 POST 'https://randopic.herokuapp.com/likes'
@@ -137,7 +137,7 @@ As before, after optimistically rendering a comment we need to persist the comme
 
 #### Endpoint to create a Comment
 
-Similarly to before, this POST request's body should include the image_id from the initial image response object, and not the **UUID**.
+Similarly to before, this POST request's body should include the image_id from the initial image response object from step 1, and not the **UUID**.
 
 ```
 POST 'https://randopic.herokuapp.com/comments'
