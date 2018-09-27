@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const imageURL = `https://randopic.herokuapp.com/images/${yourUUID}`
   
-  const imageId = 1 //Enter the id from the fetched image here
+  let imageId = 1 //Enter the id from the fetched image here
 
   const likeURL = `https://randopic.herokuapp.com/likes/`
 
