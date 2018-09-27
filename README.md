@@ -10,7 +10,7 @@
 
 ## Instructions
 
-Today we're building RandoPic, an app for viewing a random picture. There is a backend API that we have provided and you will be building out the frontend.
+Today we're building RandoPic, an app for viewing a random picture. There is a backend API that we have provided. You will be building out the frontend for this app.
 
 A RandoPic user will be able to do the following things:
 
@@ -26,13 +26,14 @@ A RandoPic user will be able to do the following things:
 
 ![Example](./animated_challenge_example.gif "Example Functionality")
 
-We have also provided an `examplePage.html` file to see an example of the HTML you'll want to generate for a photo. NOTE that examplePage.html is a static html page; you'll be dynamically manipulating the `index.html` file using JavaScript.
+We have also provided an `examplePage.html` file to see an example of the HTML you'll want to generate for a photo.
+**NOTE** that examplePage.html is a **static html page**; you'll be dynamically manipulating the `index.html` file using JavaScript.
 
 ## Deliverables and How to Approach
 
-For this challenge it is important to work iteratively, one feature at a time, before moving on to the next. You should **prioritize making code that works over attempting all of the deliverables.**
+For this challenge it is important to work iteratively, one feature at a time, before moving on to the next. You should **prioritize making code that works over attempting all of the deliverables.** It is better to have a handfull of fully working features than 10 things that were attempted but do not work.
 
-We have provided what we believe to be a good breakdown of how to approach the this problem.
+We have provided what we believe to be a good breakdown of how to approach the this problem:
 
 ## Step 1 - Get the Image Data
 
@@ -42,7 +43,7 @@ When the page loads you will need to make a request to the API to get the data a
 
 #### Endpoint to show an individual Image
 
-Visit 'https://randopic.herokuapp.com/'. Here, you should see a long, jumbled string called a **UUID**, or a 'Universally Unique Identifier'. This will be the key to fetching the image you'll work with on this challenge. Copy it to your clipboard.
+Visit 'https://randopic.herokuapp.com/'. Here, you should see a long, jumbled string called a **UUID**, or a 'Universally Unique Identifier'. This will be the key to fetching the image you'll work with on this challenge. Copy it to your clipboard. **THIS IS YOUR PERSONAL ID. This prevents your classmates from editing your images and vice versa**
 
 **Before you start anything else, locate the variable `imageId` in the `src/index.js`. Replace the value of the variable with your UUID, and use it as the `/:image_id` parameter in your initial GET request.** This will be the image you'll be working with for this code challenge.
 
@@ -93,7 +94,7 @@ This app will use what is called _optimistic rendering_. This means the DOM will
 
 #### Endpoint to create a Like
 
-Remember the **UUID** that we used to fetch our image initially? Don't worry about that here. In the request's body key, set 'image_id' to the 'id' from the image response object from step 1 (which should be a number - not a big jumbled string!) to tell your POST where to go.
+Remember the **UUID** that we used to fetch our image initially? **Don't worry about that here. Randopic knows who you are and will never forget you.** In the request's body key, set 'image_id' to the 'id' from the image response object from step 1 (which should be a number - not a big jumbled string!) to tell your POST where to go.
 
 ```
 POST 'https://randopic.herokuapp.com/likes'
