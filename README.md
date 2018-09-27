@@ -94,7 +94,7 @@ This app will use what is called _optimistic rendering_. This means the DOM will
 
 #### Endpoint to create a Like
 
-Remember the **UUID** that we used to fetch our image initially? **Don't worry about that here.** In the request's body key, set 'image_id' to the 'id' from the image response object from step 1 (which should be a number - not a big jumbled string!) to tell your POST where to go.
+Remember the **UUID** that we used to fetch our image initially? **Don't worry about that here. Randopic knows who you are and will never forget you.** In the request's body key, set 'image_id' to the 'id' from the image response object from step 1 (which should be a number - not a big jumbled string!) to tell your POST where to go.
 
 ```
 POST 'https://randopic.herokuapp.com/likes'
