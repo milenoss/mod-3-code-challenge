@@ -44,8 +44,7 @@ When the page loads you will need to make a request to the API to get the data a
 
 Visit 'https://randopic.herokuapp.com/'. Here, you should see a long, jumbled string called a **UUID**, or a 'Universally Unique Identifier'. This will be the key to fetching the image you'll work with on this challenge. Copy it to your clipboard.
 
-**Before you start anything else, locate the variable `imageId` in the `src/index.js`. Replace the value of the variable with your UUID, and use it as the `/:image_id` parameter in your initial GET request.
-.** This will be the image id you'll be working with for this code challenge.
+**Before you start anything else, locate the variable `imageId` in the `src/index.js`. Replace the value of the variable with your UUID, and use it as the `/:image_id` parameter in your initial GET request.** This will be the image you'll be working with for this code challenge.
 
 ```
 GET 'https://randopic.herokuapp.com/images/:image_id'
