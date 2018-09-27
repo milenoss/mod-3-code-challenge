@@ -14,16 +14,17 @@ Today we're building RandoPic, an app for viewing a random picture. There is a b
 
 A RandoPic user will be able to do the following things:
 
-  - As a user, when the page loads I will see an image, any comments that image has, and the number of likes that image has.
+- As a user, when the page loads I will see an image, any comments that image has, and the number of likes that image has.
 
-  - As a user, I can click to like an image, which will increase the number of likes that image has by one.
+- As a user, I can click to like an image, which will increase the number of likes that image has by one.
 
-  - As a user I can fill out an input fields and submit the form to add a comment to an image. I should see my new comment below any previous comments.
+- As a user I can fill out an input fields and submit the form to add a comment to an image. I should see my new comment below any previous comments.
 
-  - As a user, when I refresh the page, any comments or likes I have added should be persisted to the backend API and I should see my changes on the page.
+- As a user, when I refresh the page, any comments or likes I have added should be persisted to the backend API and I should see my changes on the page.
 
 ## Functionality demo
-  ![Example](./animated_challenge_example.gif "Example Functionality")
+
+![Example](./animated_challenge_example.gif "Example Functionality")
 
 We have also provided an `examplePage.html` file to see an example of the HTML you'll want to generate for a photo. NOTE that examplePage.html is a static html page; you'll be dynamically manipulating the `index.html` file using JavaScript.
 
@@ -38,7 +39,14 @@ We have provided what we believe to be a good breakdown of how to approach the t
 When the page loads you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions.
 
 #### API Docs
+
 #### Endpoint to show an individual Image
+
+Visit 'https://randopic.herokuapp.com/'. Here, you should see a long, jumbled string called a **UUID**, or a 'Universally Unique Identifier'. This will be the key to fetching the image you'll work with on this challenge. Copy it to your clipboard.
+
+**Before you start anything else, locate the variable `imageId` in the `src/index.js`. Replace the value of the variable with your UUID, and use it as the `/:image_id` parameter in your initial GET request.
+.** This will be the image id you'll be working with for this code challenge.
+
 ```
 GET 'https://randopic.herokuapp.com/images/:image_id'
 
@@ -58,7 +66,6 @@ Example Response:
   ]
 }
 ```
-**Before you start anything else, locate the variable `imageId` in the `src/index.js`. Replace the value of the variable with your assigned number.** This will be the image id you'll be working with for this code challenge.
 
 Use the data from the API response to append the information to the DOM. You will need to add:
 
@@ -81,10 +88,14 @@ A user can like the same picture multiple times.
 
 ## Step 3 - Like Feature (Backend)
 
-This app will use what is called *optimistic rendering*. This means the DOM will be updated before the changes are added to the database.  When a user clicks the 'Like' button we will immediately update the DOM.  Next your job is to make a POST request to persist the new Like in the backend database.
+This app will use what is called _optimistic rendering_. This means the DOM will be updated before the changes are added to the database. When a user clicks the 'Like' button we will immediately update the DOM. Next your job is to make a POST request to persist the new Like in the backend database.
 
 #### API Docs
+
 #### Endpoint to create a Like
+
+Remember the **UUID** that we used to fetch our image initially? Don't worry about that here. In the request's body key, set 'image_id' to the 'id' from the image response object to tell your POST where to go.
+
 ```
 POST 'https://randopic.herokuapp.com/likes'
 
@@ -123,7 +134,11 @@ Filling out the input and clicking 'Submit' should append your new comment as an
 As before, after optimistically rendering a comment we need to persist the comment to the database.
 
 #### API Docs
+
 #### Endpoint to create a Comment
+
+Similarly to before, this POST request's body should include the image_id from the initial image response object, and not the **UUID**.
+
 ```
 POST 'https://randopic.herokuapp.com/comments'
 
@@ -167,7 +182,9 @@ Clicking the button should delete the comment from the DOM as well as deleting i
 Take the same iterative approach as before.
 
 #### API Docs
+
 #### Endpoint to delete a Comment
+
 ```
 DELETE 'https://randopic.herokuapp.com/comments/:comment_id'
 
@@ -177,4 +194,4 @@ Example Response:
 }
 ```
 
-*(Hint: To get the comment's id you may have to think about changing the way you handle the response received from creating a comment)*
+_(Hint: To get the comment's id you may have to think about changing the way you handle the response received from creating a comment)_
