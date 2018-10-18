@@ -5,7 +5,6 @@
 - DOM Manipulation
 - Events and Event Handlers
 - Callbacks
-- ES6 Classes
 - Fetching from APIs
 
 ## Instructions
@@ -26,9 +25,6 @@ A RandoPic user will be able to do the following things:
 
 ![Example](./animated_challenge_example.gif "Example Functionality")
 
-We have also provided an `examplePage.html` file to see an example of the HTML you'll want to generate for a photo.
-**NOTE** that examplePage.html is a **static html page**; you'll be dynamically manipulating the `index.html` file using JavaScript.
-
 ## Deliverables and How to Approach
 
 For this challenge it is important to work iteratively, one feature at a time, before moving on to the next. You should **prioritize making code that works over attempting all of the deliverables.** It is better to have a handfull of fully working features than 10 things that were attempted but do not work.
@@ -43,25 +39,28 @@ When the page loads you will need to make a request to the API to get the data a
 
 #### Endpoint to show an individual Image
 
-Visit 'https://randopic.herokuapp.com/'. Here, you should see a long, jumbled string called a **UUID**, or a 'Universally Unique Identifier'. This will be the key to fetching the image you'll work with on this challenge. Copy it to your clipboard. **THIS IS YOUR PERSONAL ID. This prevents your classmates from editing your images and vice versa**
+Visit 'https://randopic.herokuapp.com/'. The application will assign you your very own `image_id`.  **THIS IS YOUR ASSIGNED IMAGE. This prevents your classmates from editing your images and vice versa**.
 
-**Before you start anything else, locate the variable `yourUUID` in the `src/index.js`. Replace the value of the variable with your UUID, and use it as the `/:uuid` parameter in your initial GET request.** This will be the image you'll be working with for this code challenge.
+**Before you start anything else, locate the variable `imageId` in the `src/index.js`. Replace the value of the variable with your image id, and use it as the `/:id` parameter in your initial GET request.** This will be the image you'll be working with for this code challenge.
 
+```js
+GET 'https://randopic.herokuapp.com/images/:id'
 ```
-GET 'https://randopic.herokuapp.com/images/:uuid'
 
+```json
 Example Response:
 {
   "id": 1,
-  "url": "http://blog.flatironschool.com/wp-content/uploads/2017/06/IMAG2936-352x200.jpg",
-  "name": "Science Fair",
+  "url": "http://blog.flatironschool.com/wp-content/uploads/2016/07/072716-js-saved-web-4-352x200.jpg",
+  "name": "The Internet!",
   "like_count": 0,
   "comments": [
     {
-      "id": 1,
+      "id": 5941,
       "content": "first comment!",
-      "created_at": "2017-09-27T18:18:05.623Z",
-      "updated_at": "2017-09-27T18:18:05.623Z"
+      "image_id": 1158,
+      "created_at": "2018-10-18T17:06:14.859Z",
+      "updated_at": "2018-10-18T17:06:14.859Z"
     }
   ]
 }
@@ -74,7 +73,31 @@ Use the data from the API response to append the information to the DOM. You wil
 - the number of likes
 - any comments in an unordered list
 
-Use the example html to guide you as to where this data should go.
+Your HTML might look something like this (obviously you'd need to replace `🤔` with the actual data):
+
+```html
+<div class="container">
+  <div class="row" id="image_content">
+    <div class="card col-md-4"></div>
+    <div id="image_card" class="card col-md-4">
+      <img src="🤔" id="image" data-id="🤔"/>
+      <h4 id="name">🤔</h4>
+      <span>Likes:
+        <span id="likes">🤔</span>
+      </span>
+      <button id="like_button">Like</button>
+      <form id="comment_form">
+        <input id="comment_input" type="text" name="comment" placeholder="Add Comment"/>
+        <input type="submit" value="Submit"/>
+      </form>
+      <ul id="comments">
+        <li>🤔</li>
+      </ul>
+    </div>
+    <div class="card col-md-4"></div>
+  </div>
+</div>
+```
 
 (If you cannot get your fetch request to work correctly you can always use the example response above to append content to the DOM and work with for the subsequent steps)
 
@@ -86,6 +109,8 @@ Clicking the 'Like' button should increase the number of likes by one.
 
 A user can like the same picture multiple times.
 
+---
+
 ## Step 3 - Like Feature (Backend)
 
 This app will use what is called _optimistic rendering_. This means the DOM will be updated before the changes are added to the database. When a user clicks the 'Like' button we will immediately update the DOM. Next your job is to make a POST request to persist the new Like in the backend database.
@@ -94,9 +119,9 @@ This app will use what is called _optimistic rendering_. This means the DOM will
 
 #### Endpoint to create a Like
 
-Remember the **UUID** that we used to fetch our image initially? **Don't worry about that here. Randopic knows who you are and will never forget you.** In the request's body key, set 'image_id' to the 'id' from the image response object from step 1 (which should be a number - not a big jumbled string!) to tell your POST where to go.
+In the request's body key, set `image_id` to your assigned `id`. This will tell your new like which image it belongs to (remember database associations?😱).
 
-```
+```js
 POST 'https://randopic.herokuapp.com/likes'
 
 Required keys in the body of the request:
@@ -109,7 +134,9 @@ Required Headers
   'Accept': 'application/json',
   'Content-Type': 'application/json'
 }
+```
 
+```json
 Example Response:
 {
     "id": 112,
@@ -122,6 +149,8 @@ Example Response:
 Since we are using optimistic rendering, you shouldn't have to do anything with the response.
 
 To test your code you should be able to refresh the page and see the number of likes be the increased number.
+
+---
 
 ## Step 4 - Comment Feature (Frontend)
 
@@ -137,9 +166,9 @@ As before, after optimistically rendering a comment we need to persist the comme
 
 #### Endpoint to create a Comment
 
-Similarly to before, this POST request's body should include the image_id from the initial image response object from step 1, and not the **UUID**.
+Similarly to before, this POST request's body should include the your assigned `imageId`. Remember associations? A `comment` `belongs_to` an `image`, so we need to send the `image_id` that the comment should be associated with:
 
-```
+```js
 POST 'https://randopic.herokuapp.com/comments'
 
 Required keys in the body of the request:
@@ -153,15 +182,17 @@ Required Headers
   'Accept': 'application/json',
   'Content-Type': 'application/json'
 }
+```
 
+
+```json
 Example Response (created comment):
 {
-  {
-    "id": 2,
-    "content": "first comment!",
-    "created_at": "2017-09-27T18:18:05.623Z",
-    "updated_at": "2017-09-27T18:18:05.623Z"
-  }
+  "id": 5,
+  "content": "nice",
+  "image_id": 1,
+  "created_at": "2018-10-18T19:10:40.369Z",
+  "updated_at": "2018-10-18T19:10:40.369Z"
 }
 ```
 
