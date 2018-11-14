@@ -66,7 +66,7 @@ Example Response:
 }
 ```
 
-Use the data from the API response to change what's currently on the page. You will need to add/update:
+Use the data from the API response to change what's currently on the page (take a look at the already provided `index.html`). You will need to add/update:
 
 - the image url
 - the image name
