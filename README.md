@@ -66,38 +66,12 @@ Example Response:
 }
 ```
 
-Use the data from the API response to append the information to the DOM. You will need to add:
+Use the data from the API response to change what's currently on the page (take a look at the already provided `index.html`). You will need to add/update:
 
 - the image url
 - the image name
 - the number of likes
 - any comments in an unordered list
-
-Your HTML might look something like this (obviously you'd need to replace `🤔` with the actual data):
-
-```html
-<div class="container">
-  <div class="row" id="image_content">
-    <div class="card col-md-4"></div>
-    <div id="image_card" class="card col-md-4">
-      <img src="🤔" id="image" data-id="🤔"/>
-      <h4 id="name">🤔</h4>
-      <span>Likes:
-        <span id="likes">🤔</span>
-      </span>
-      <button id="like_button">Like</button>
-      <form id="comment_form">
-        <input id="comment_input" type="text" name="comment" placeholder="Add Comment"/>
-        <input type="submit" value="Submit"/>
-      </form>
-      <ul id="comments">
-        <li>🤔</li>
-      </ul>
-    </div>
-    <div class="card col-md-4"></div>
-  </div>
-</div>
-```
 
 (If you cannot get your fetch request to work correctly you can always use the example response above to append content to the DOM and work with for the subsequent steps)
 
