@@ -39,7 +39,7 @@ When the page loads you will need to make a request to the API to get the data a
 
 #### Endpoint to show an individual Image
 
-Visit 'https://randopic.herokuapp.com/'. The application will assign you your very own `image_id`.  **THIS IS YOUR ASSIGNED IMAGE. This prevents your classmates from editing your images and vice versa**.
+Visit https://randopic.herokuapp.com/ in your web browser. The application will assign you your very own `image_id`.  **THIS IS YOUR ASSIGNED IMAGE. This prevents your classmates from editing your images and vice versa**.
 
 **Before you start anything else, locate the variable `imageId` in the `src/index.js`. Replace the value of the variable with your image id, and use it as the `/:id` parameter in your initial GET request.** This will be the image you'll be working with for this code challenge.
 
