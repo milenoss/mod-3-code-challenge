@@ -18,7 +18,7 @@ A user of your app must be able to do the following things:
   - any comments that image has
   - the number of likes that image has
 
-- As a user, I can click to like an image. When I click, the number of likes the image has should increase by one without the page refreshing.
+- As a user, I can click a button to like an image. When I click, the number of likes the image has should increase by one without the page refreshing.
 
 - As a user, I can enter text in an input field, submit the form the input is in, and add a comment to the image without the page refreshing. I should see my new comment *below* any previous comments.
 
