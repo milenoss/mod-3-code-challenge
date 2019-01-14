@@ -9,17 +9,20 @@
 
 ## Instructions
 
-Today we're building RandoPic, an app for viewing a random picture. There is a backend API that we have provided. You will be building out the frontend for this app.
+Today we're building an app for viewing, liking, and commenting on a single picture. There is a backend API deployed on a server that you will use. You will be building out the frontend for this app.
 
-A RandoPic user will be able to do the following things:
+A user of your app must be able to do the following things:
 
-- As a user, when the page loads I will see an image, any comments that image has, and the number of likes that image has.
+- As a user, when the page loads, I should see:
+  - an image
+  - any comments that image has
+  - the number of likes that image has
 
-- As a user, I can click to like an image, which will increase the number of likes that image has by one.
+- As a user, I can click to like an image. When I click, the number of likes the image has should increase by one without the page refreshing.
 
-- As a user I can fill out an input fields and submit the form to add a comment to an image. I should see my new comment below any previous comments.
+- As a user, I can enter text in an input field, submit the form the input is in, and add a comment to the image without the page refreshing. I should see my new comment *below* any previous comments.
 
-- As a user, when I refresh the page, any comments or likes I have added should be persisted to the backend API and I should see my changes on the page.
+- As a user, when I refresh the page, any comments or likes I have added should still be there. When a user adds a like or a comment, make sure their changes are sent to the backend API.
 
 ## Functionality demo
 
@@ -27,19 +30,19 @@ A RandoPic user will be able to do the following things:
 
 ## Deliverables and How to Approach
 
-For this challenge it is important to work iteratively, one feature at a time, before moving on to the next. You should **prioritize making code that works over attempting all of the deliverables.** It is better to have a handfull of fully working features than 10 things that were attempted but do not work.
+For this challenge it is important to work iteratively: one feature at a time, before moving on to the next. You should **prioritize making code that works over attempting all of the deliverables.** It is better to have a handfull of fully working features than 10 things that were attempted but do not work.
 
 We have provided what we believe to be a good breakdown of how to approach the this problem:
 
 ## Step 1 - Get the Image Data
 
-When the page loads you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions.
+When the page loads you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions, but make sure you read the API documentation to familiarize yourself with the models, their associations, and the available endpoints of the API.
 
 #### API Docs
 
 #### Endpoint to show an individual Image
 
-Visit https://randopic.herokuapp.com/ in your web browser. The application will assign you your very own `image_id`.  **THIS IS YOUR ASSIGNED IMAGE. This prevents your classmates from editing your images and vice versa**.
+Visit https://randopic.herokuapp.com/ in your web browser. The backend will assign you your very own `image_id`.  **THIS IS YOUR ASSIGNED IMAGE. This prevents your classmates from editing your images and vice versa**.
 
 **Before you start anything else, locate the variable `imageId` in the `src/index.js`. Replace the value of the variable with your image id, and use it as the `/:id` parameter in your initial GET request.** This will be the image you'll be working with for this code challenge.
 
@@ -73,13 +76,13 @@ Use the data from the API response to change what's currently on the page (take 
 - the number of likes
 - any comments in an unordered list
 
-(If you cannot get your fetch request to work correctly you can always use the example response above to append content to the DOM and work with for the subsequent steps)
+(If you cannot get your fetch request to work correctly, you can  use the example response above to append content to the DOM and attempt the subsequent steps)
 
 ## Step 2 - Like Feature (Frontend)
 
-The next feature to approach is the functionality to add likes to a picture. First get this working in the browser only without worrying about persistence.
+The next feature to approach is the functionality to add likes to a picture. First, get this working in the browser only without worrying about persistence.
 
-Clicking the 'Like' button should increase the number of likes by one.
+Clicking the 'Like' button should increase the number of likes shown on the page by one.
 
 A user can like the same picture multiple times.
 
@@ -87,13 +90,13 @@ A user can like the same picture multiple times.
 
 ## Step 3 - Like Feature (Backend)
 
-This app will use what is called _optimistic rendering_. This means the DOM will be updated before the changes are added to the database. When a user clicks the 'Like' button we will immediately update the DOM. Next your job is to make a POST request to persist the new Like in the backend database.
+This app will use what is called _optimistic rendering_. This means the DOM will be updated *before* the changes are added to the database. When a user clicks the 'Like' button we will immediately update the DOM. Next, your job is to make a POST request to persist the new Like in the backend database.
 
 #### API Docs
 
 #### Endpoint to create a Like
 
-In the request's body key, set `image_id` to your assigned `id`. This will tell your new like which image it belongs to (remember database associations?😱).
+Send a string containing a JSON object as the request's body. In the JSON, make sure the `image_id` key has the value of your assigned image ID. This will tell your newly-created like which image it belongs to (remember database associations?😱).
 
 ```js
 POST 'https://randopic.herokuapp.com/likes'
@@ -122,19 +125,19 @@ Example Response:
 
 Since we are using optimistic rendering, you shouldn't have to do anything with the response.
 
-To test your code you should be able to refresh the page and see the number of likes be the increased number.
+To test your code, make sure the number of likes increments when you click the like button. Then, refresh the page and make sure the increased number of likes remains the same.
 
 ---
 
 ## Step 4 - Comment Feature (Frontend)
 
-The next feature to approach is the functionality to add comments to a picture. First get this working in the browser only without worrying about persistence.
+The next feature to approach is the functionality to add comments to a picture. First, get this working in the browser only, without worrying about persistence.
 
-Filling out the input and clicking 'Submit' should append your new comment as an `<li>` to the comments unordered list element. You should also clear out the comment input, so it's an empty field for the next comment to be added.
+Filling out the input and clicking 'Submit' should append your new comment as an `<li>` to the comments unordered list element. You should also clear out the text in the comment input, so it's empty and ready for the next comment to be added.
 
 ## Step 5 - Comment Feature (Backend)
 
-As before, after optimistically rendering a comment we need to persist the comment to the database.
+As before, we need to persist the comment to the database, after optimistically rendering a comment.
 
 #### API Docs
 
@@ -178,13 +181,11 @@ To test your code you should be able to refresh the page and see any comments yo
 
 ## Step 6 - Delete a comment feature
 
-This feature is not required and you should only attempt if you have time.
+This feature is not required, and you should only attempt if you have time.
 
-When you display new comments add a button next to each comment to delete that comment.
+When you display new comments, add a button next to each comment. Clicking the button should delete the comment from the DOM, *as well as deleting it from the database*.
 
-Clicking the button should delete the comment from the DOM as well as deleting it from the database.
-
-Take the same iterative approach as before.
+Take the same iterative approach as before. Use pessimistic rendering.
 
 #### API Docs
 
