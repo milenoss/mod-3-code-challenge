@@ -103,7 +103,7 @@ POST 'https://randopic.herokuapp.com/likes'
 
 Required keys in the body of the request:
 {
-  image_id: <insert image id here>
+  image_id: (insert image id here)
 }
 
 Required Headers
@@ -150,8 +150,8 @@ POST 'https://randopic.herokuapp.com/comments'
 
 Required keys in the body of the request:
 {
-  image_id: <insert image id here>,
-  content: <insert comment content here>
+  image_id: (insert image id here),
+  content: (insert comment content here)
 }
 
 Required Headers
