@@ -20,7 +20,7 @@ A user of your app must be able to do the following things:
 
 - As a user, I can click a button to like an image. When I click, the number of likes the image has should increase by one without the page refreshing.
 
-- As a user, I can enter text in an input field, submit the form the input is in, and add a comment to the image without the page refreshing. I should see my new comment *below* any previous comments.
+- As a user, I can enter text in an input field, and submit the form that the input is in. When I do, the app should add comment to the image without the page refreshing. I should see my new comment *below* any previous comments.
 
 - As a user, when I refresh the page, any comments or likes I have added should still be there. When a user adds a like or a comment, make sure their changes are sent to the backend API.
 
@@ -32,11 +32,11 @@ A user of your app must be able to do the following things:
 
 For this challenge it is important to work iteratively: one feature at a time, before moving on to the next. You should **prioritize making code that works over attempting all of the deliverables.** It is better to have a handfull of fully working features than 10 things that were attempted but do not work.
 
-We have provided what we believe to be a good breakdown of how to approach the this problem:
+We have provided a series of prioritized steps to help you break down your approach this problem:
 
 ## Step 1 - Get the Image Data
 
-When the page loads you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions, but make sure you read the API documentation to familiarize yourself with the models, their associations, and the available endpoints of the API.
+When the page loads, you will need to make a request to the API to get the data about your picture. The API follows RESTful conventions, but *make sure you read the API documentation* to familiarize yourself with the models, their associations, and the available endpoints of the API.
 
 #### API Docs
 
