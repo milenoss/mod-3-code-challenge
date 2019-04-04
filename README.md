@@ -1,5 +1,22 @@
 # JavaScript Code Challenge
 
+## Allowed Resources
+This Code Challenge is designed to test your abilities in a similar situation to a technical assessment from an employer. In order to achieve an accurate assessment, there are a few restrictions on the resources you may use to complete this code challenge. 
+
+### Allowed
+
+ 1. Your brain!
+ 2. The Debugger. Please run and debug your code
+ 3. The general internet
+ 
+### Not Allowed
+
+ 1. Other students
+ 2. Any prepared materials 
+ 3. Any lessons
+ 4. Any solution code from any lab, whether you wrote it or Flatiron School did
+ 5. Code from any lecture
+
 ## Objectives
 
 - DOM Manipulation
