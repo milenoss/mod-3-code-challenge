@@ -10,18 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const commentsURL = `https://randopic.herokuapp.com/comments/`
 
     
-  //fetch image
+    //fetch image
     //render image,comments and likes
     //post likes 
     //post comment 
     //display comment 
   
-   getImages() 
+  getImages() 
 
   function getImages(){ 
-    return fetch(imageURL)
-    .then(response => response.json())
-    .then(result => renderImage(result))
+      return fetch(imageURL)
+      .then(response => response.json())
+      .then(result => renderImage(result))
   }
 
 
@@ -71,19 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
       })
         //display the comment 
 
-        const form = document.querySelector('#comment_form')
-        result.comments.forEach(function (text) {
-        commentList = document.getElementById("comments")
-        
-        singleCommentLi = document.createElement('li')
-        singleCommentLi.innerText = text.content
-        commentList.append(singleCommentLi)
-        })
+      const form = document.querySelector('#comment_form')
+      result.comments.forEach(function (text){
+          commentList = document.getElementById("comments")
+          
+          singleCommentLi = document.createElement('li')
+          singleCommentLi.innerText = text.content
+          commentList.append(singleCommentLi)
+      })
 
       form.addEventListener('submit', function(e){
           //debugger
           e.preventDefault()
-
           const data = {
               image_id: imageId,
               content: e.target.children[0].value
